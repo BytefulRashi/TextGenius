@@ -13,7 +13,7 @@ This project demonstrates a simple web application built with FastAPI to generat
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/BytefulRashi/TextGenius.git
    cd your-repo
    ```
 
