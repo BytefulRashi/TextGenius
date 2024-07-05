@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Generation API</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        button {
+            padding: 0.75rem;
+            font-size: 1rem;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .output {
+            margin-top: 1.5rem;
+        }
+        .output h2 {
+            font-size: 1.25rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .output p {
+            font-size: 1rem;
+            color: #555;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Text Generation API</h1>
+        <form action="/generate" method="get">
+            <label for="prompt">Enter a prompt:</label>
+            <textarea id="prompt" name="prompt" required>{{ prompt if prompt else '' }}</textarea>
+            <button type="submit">Generate Text</button>
+        </form>
+        {% if output %}
+        <div class="output">
+            <h2>Generated Text:</h2>
+            <p>{{ output }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
